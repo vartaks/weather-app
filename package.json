@@ -1,0 +1,26 @@
+{
+  "name": "weather-app-sjv",
+  "version": "1.0.0",
+  "description": "Weather app using NodeJS",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vartaks/weather-app.git"
+  },
+  "keywords": [
+    "weather",
+    "nodejs"
+  ],
+  "author": "Sourabh Vartak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vartaks/weather-app/issues"
+  },
+  "homepage": "https://github.com/vartaks/weather-app#readme",
+  "dependencies": {
+    "request": "^2.73.0"
+  }
+}
