@@ -21,15 +21,13 @@ geocode.geocodeAddress(argv.address, (errorMessage, results) => {
         console.log(errorMessage);
     } else {
         console.log(JSON.stringify(results, null, 2));
+
+        weather.getWeather(results.latitude, results.longitude, (errorMessage, weatherResults) => {
+            if (errorMessage) {
+                console.log(errorMessage);
+            } else {
+                console.log(JSON.stringify(weatherResults, null, 2));
+            }
+        });
     }
 });
-
-
-weather.getWeather(13.0826,80.2707, (errorMessage, results) => {
-    if (errorMessage) {
-        console.log(errorMessage);
-    } else {
-        console.log(JSON.stringify(results, null, 2));
-    }
-});
-
