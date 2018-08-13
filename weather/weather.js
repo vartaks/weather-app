@@ -1,7 +1,9 @@
 const request = require('request');
 
-var getWeather = () => {
-    var url = `https://api.darksky.net/forecast/dbfe83c5fec8d123166b4c85b0c23ef2/13.0826,80.2707`;
+const apiKey = 'dbfe83c5fec8d123166b4c85b0c23ef2';
+
+var getWeather = (latitude, longitude, callback) => {
+    var url = `https://api.darksky.net/forecast/${apiKey}/${latitude},${longitude}`;
 
     console.log("URL:", url);
 
@@ -10,10 +12,12 @@ var getWeather = () => {
         json: true
     }, (error, response, body) => {
         if (!error && response.statusCode === 200) {
-            console.log(body.currently.summary);
-            console.log(body.currently.temperature);   
+            callback(undefined, {
+                summary: body.currently.summary,
+                temperature: body.currently.temperature
+            }); 
         } else {
-            console.log('Unable to fetch weather from DarkSky servers.');
+            callback('Unable to fetch weather from DarkSky servers.');
         }
     });
 };

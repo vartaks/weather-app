@@ -25,5 +25,11 @@ geocode.geocodeAddress(argv.address, (errorMessage, results) => {
 });
 
 
-weather.getWeather();
+weather.getWeather(13.0826,80.2707, (errorMessage, results) => {
+    if (errorMessage) {
+        console.log(errorMessage);
+    } else {
+        console.log(JSON.stringify(results, null, 2));
+    }
+});
 
